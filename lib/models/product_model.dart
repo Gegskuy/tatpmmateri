@@ -1,4 +1,4 @@
-class Products {
+ class Products {
   LowestResellPrice? lowestResellPrice;
   List<String>? imageLinks;
   String? sId;

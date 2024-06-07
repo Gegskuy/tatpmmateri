@@ -5,6 +5,7 @@ import 'views/login_screen.dart';
 
 void main() async{
   await GetStorage.init();
+  await GetStorage.init('fav');
   await GetStorage.init('session');
   runApp(MyApp());
 }

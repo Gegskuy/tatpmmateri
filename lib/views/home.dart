@@ -2,10 +2,12 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:tatpmmobil/models/most_popular_model.dart';
 import 'package:tatpmmobil/models/product_model.dart';
 import 'package:tatpmmobil/models/search.dart';
 import 'package:tatpmmobil/views/detail_screen.dart';
+import 'package:tatpmmobil/views/favorite.dart';
 import '../models/api_data_source.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -17,6 +19,13 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   String sId = "";
+  int _selectedIndex = 0;
+  late List<dynamic> bodyList = [
+    _buildProductsBody(),
+    FavoriteScreen(),
+    Container()
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +43,35 @@ class _HomeScreenState extends State<HomeScreen> {
           )
         ],
       ),
-      body: _buildProductsBody()
+      body: bodyList[_selectedIndex],
+      bottomNavigationBar: GNav(
+        gap: 8,
+        backgroundColor: Colors.black,
+        color: Colors.white,
+        activeColor: Colors.white,
+        tabBackgroundColor: Colors.blueGrey.shade900,
+        padding: EdgeInsets.all(16),
+        tabs: const[
+          GButton(
+            icon: Icons.home,
+            text: 'Home',
+          ),
+          GButton(
+            icon: Icons.star_half,
+            text: 'Favorite',
+          ),
+          GButton(
+              icon: Icons.person,
+              text: 'Profile'
+          ),
+        ],
+        selectedIndex: _selectedIndex,
+        onTabChange: (index) {
+          setState(() {
+            _selectedIndex = index;
+          });
+        },
+      ),
     );
   }
 

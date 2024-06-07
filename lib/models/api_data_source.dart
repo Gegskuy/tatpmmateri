@@ -9,7 +9,6 @@ class ApiDataSource{
     return BaseNetwork.get("mostpopular");
   }
 
-
   Future<List<dynamic>> getProducts(String sId){
     return BaseNetwork.get("getproducts?keywords=shoes&limit=20");
   }

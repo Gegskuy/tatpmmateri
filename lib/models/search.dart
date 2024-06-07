@@ -8,7 +8,6 @@ class SearchShoe extends SearchDelegate{
   String sId = "";
   @override
   List<Widget>? buildActions(BuildContext context) {
-    // TODO: implement buildActions
     return [
       IconButton(
         icon: Icon(Icons.close),
@@ -21,7 +20,6 @@ class SearchShoe extends SearchDelegate{
 
   @override
   Widget? buildLeading(BuildContext context) {
-    // TODO: implement buildLeading
     return IconButton(
       icon: Icon(Icons.arrow_back_ios),
       onPressed: () {
@@ -32,13 +30,11 @@ class SearchShoe extends SearchDelegate{
 
   @override
   Widget buildResults(BuildContext context) {
-    // TODO: implement buildResults
     return _buildProductsBody();
   }
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    // TODO: implement buildSuggestions
     return Center(
       child: Text('Search Shoes'),
     );
