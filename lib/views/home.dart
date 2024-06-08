@@ -9,6 +9,7 @@ import 'package:tatpmmobil/models/search.dart';
 import 'package:tatpmmobil/views/detail_screen.dart';
 import 'package:tatpmmobil/views/favorite.dart';
 import '../models/api_data_source.dart';
+import 'package:tatpmmobil/views/profile.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
