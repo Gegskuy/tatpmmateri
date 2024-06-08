@@ -23,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
   late List<dynamic> bodyList = [
     _buildProductsBody(),
     FavoriteScreen(),
-    Container()
+    Profile()
   ];
 
   @override
